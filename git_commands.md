@@ -23,4 +23,25 @@
 ```
     git status
 ```
+- mostrar todos los archivos modificados
+```
+    git diff
+```
+- Mostrar cambios en file_name
+```
+    git diff [file_name]
+```
+- commit cambios
+```
+    git commit -m "mensaje de commit aqui"
+```
+- Preparar y hacer commit de cambios, pero ignora los archivos recién creados
+```
+    git add -a -m "mensage de commit aqui"
+```
 
+
+- descartar el último commit y hace checkout al anterior
+```
+
+```
