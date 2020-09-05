@@ -3,17 +3,17 @@
 ## Variables
 
 ```
-var a;//variable
-var b = "apple";//string
-var c = "Hello" + " " + "world";//"Hello world"
-var d = 1+2+"3";//"33"
-var e = [1,4,6,8];//array
-var f = false;//boolean
-var g = /()/;//RegEx
-var h = function()();//function onbject
-const PI = 3.14;//constant
-var a = 1,b = 2, c = a + b;//one line
-let z = 'zzz';//block scope local variable
+var a;                                  //variable
+var b = "apple";                        //string
+var c = "Hello" + " " + "world";        //"Hello world"
+var d = 1+2+"3";                        //"33"
+var e = [1,4,6,8];                      //array
+var f = false;                          //boolean
+var g = /()/;                           //RegEx
+var h = function()();                   //function onbject
+const PI = 3.14;                        //constant
+var a = 1,b = 2, c = a + b;             //one line
+let z = 'zzz';                          //block scope local variable
 ```
 
 ## Data types
@@ -160,27 +160,27 @@ La palabra clave 'var' se introduce antes de ES2015 y se usa para declarar una v
 Todo lo que necesita saber sobre ES6 https://morioh.com/p/f207ec2d8b2f?fbclid=IwAR1ahP0Wwe3Bvbq8yQghUMpvzwPqMK2WvrSQqsKNkWDdXVpAwUCFOMCQD5w
 
 ```
-    Number.EPSILON //2.220446049250313e-16
-    Number.isInteger(Infinity); //false
-    Number.isNAN("NAN"); //false
+    Number.EPSILON                                  //2.220446049250313e-16
+    Number.isInteger(Infinity);                     //false
+    Number.isNAN("NAN");                            //false
 
-    Math.acosh(3); //1.7627471740390859
-    Math.hypot(3,4); //5
-    Math.imul(Math.pow(2,32)-1,Math.pow(2,32)-2); //2
+    Math.acosh(3);                                  //1.7627471740390859
+    Math.hypot(3,4);                                //5
+    Math.imul(Math.pow(2,32)-1,Math.pow(2,32)-2);   //2
 
-    "abcde".includes("cd"); //true
-    "abc".repeat(3); //"abcabcabc"
+    "abcde".includes("cd");                         //true
+    "abc".repeat(3);                                //"abcabcabc"
 
-    Array.from(document.querySelectorAll('*')); //devuelve una matriz
-    Array.of(1,2,3); //[1, 2, 3] similar a la nueva matriz Array(...) pero sin un comportamiento especial de un argumento
+    Array.from(document.querySelectorAll('*'));     //devuelve una matriz
+    Array.of(1,2,3);                                //[1, 2, 3] similar a la nueva matriz Array(...) pero sin un comportamiento especial de un argumento
 
-    [0,0,0].fill(7,1); //[0, 7, 7]
-    [5,6,7].find(x=>x==7); //7
-    [1,2,3].findIndex(x=>x==2); //1
-    [1,2,3,4,5].copyWithin(3,0); //[1, 2, 3, 1, 2]
-    ["a","b","c"].entries(); //iterator [0,"a"], [1,"b"], [2,"c"]
-    ["a","b","c"].keys(); //iterator 0, 1, 2
-    ["a","b","c"].values(); //iterator "a", "b", "c"
+    [0,0,0].fill(7,1);                              //[0, 7, 7]
+    [5,6,7].find(x=>x==7);                          //7
+    [1,2,3].findIndex(x=>x==2);                     //1
+    [1,2,3,4,5].copyWithin(3,0);                    //[1, 2, 3, 1, 2]
+    ["a","b","c"].entries();                        //iterator [0,"a"], [1,"b"], [2,"c"]
+    ["a","b","c"].keys();                           //iterator 0, 1, 2
+    ["a","b","c"].values();                         //iterator "a", "b", "c"
 
     Object.assign(Point,{origin: new Point(0,0) })
 ```
@@ -192,17 +192,17 @@ Todo lo que necesita saber sobre ES6 https://morioh.com/p/f207ec2d8b2f?fbclid=Iw
 ```
     const array=[1,1,2,3,6,6,3,1];
     const uniqueArray=[...new Set(array)];
-    console.log(uniqueArray); //[1, 2, 3, 6]
+    console.log(uniqueArray);                   //[1, 2, 3, 6]
 ```
 
 ### Conversion a boolean
 
 ```
     const isTrue=!0;
-    console.log(isTrue); //true
+    console.log(isTrue);            //true
 
     const alsoFalse=!!0;
-    console.log(alsoFalse); //false
+    console.log(alsoFalse);         //false
 ```
 
 ### Conversion a string
