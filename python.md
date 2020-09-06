@@ -133,3 +133,5 @@ Para importar elementos desde modulos diferentes con los mismos nombre, hay que 
 from paquete.modulo1 import CONST_1 as C1
 from paquete.subpaquete.modulo1 import CONST_1 as CS1
 ```
+
+La importacion de modulos debe realizarse al comienzo del documento, en orden alfabetico de paquetes y modulos.
