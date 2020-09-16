@@ -366,3 +366,32 @@ result = array.join(" ");
 console.log(result);
 // JS Start
 ```
+
+## DECLARACION DE FUNCION
+
+```js
+function isEven(param) {
+  return param % 2 === 0;
+}
+isEven(3); // output => false
+isEven(4); // output => true
+```
+
+### FUNCION EXPRESION
+
+```js
+let isEven = function (param) {
+  return param % 2 === 0;
+};
+isEven(3); // output => false
+isEven(4); // output => true
+```
+
+### FUNCION CONTRUCTOR
+
+```js
+let param = "param";
+let console = "consoole.log(param";
+let get = new function(param, console);
+console.log(get("JS"));// output => JS
+```
