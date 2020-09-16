@@ -395,3 +395,13 @@ let console = "consoole.log(param";
 let get = new function(param, console);
 console.log(get("JS"));// output => JS
 ```
+
+### ARROW FUNCTION
+
+```js
+let isEven = (param) => {
+  return param % 2 === 0;
+};
+isEven(3); // output => false
+isEven(4); // output => true
+```
