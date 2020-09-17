@@ -135,3 +135,89 @@ from paquete.subpaquete.modulo1 import CONST_1 as CS1
 ```
 
 La importacion de modulos debe realizarse al comienzo del documento, en orden alfabetico de paquetes y modulos.
+
+## Redes neuronales
+
+### Perceptron
+
+Parte 1
+
+```py
+import numpy as np
+class Perceptron:
+  # PARTE 1
+  # Definimos el contructor de nuestra clase Perceptron, que recibira dos parametros:
+  # N: Es la cantidad de columnas en nuestros vectores de entrada.
+  # alpha: es el porcentaje de aprenndizaje del Perceptron. Podemos definir este valor por defecto 0.01, otros valores normales son en el rango de α = 0.1, 0.01, 0.001.
+  def __init__(self, N, alpha=0.1):
+    # Almacenamos nuestra matriz de peso W con valores aleatorios muestreados de una distribucion normal.
+    # La matriz de ponderaciones tendra N+1 entradas, una para cada una de las N entradas en el vector de caracteristicas, mas una para el sesgo.
+    # Dividimos W por la raiiz cuadrada del numero de entradas
+    self.W = np.random.randn(N+1)/np.sqrt(N)
+    self.alpha = alpha
+  # La funcion de paso retorna 1 si es positiva, cualquier otroo caso retorna 0
+  def step(self, x):
+    return 1 if x > 0 else 0
+
+  # PARTE 2
+  # El metodo fit requiere 3 parametros:
+  # X: Es el valor actual de nuestros datos de entrenamiento.
+  # Y: E la variable objetivo de salida(la prediccion).
+  # epochs: La cantidad de veces que nuestro perceptron sera entrenado.
+  def fit(self, X, epochs=10):
+    # Comenzamos a recorrer la cantidad de veces que queremos entrenar nuetro preceptron. En cada vuelta tambien recorremos cada punto de datos individual de X.
+    # El valor de X son nuestros valores reales de entrenamiento, la variable Y son nuestras etiquetas de clase de salida de destino(los valores que el perceptron deberia aprender)
+    # Obtenemos el producto escalar entre las caracteristicas de entrada X y la matriz de peso W, pasamos dicho valor a la funcion de paso del perceptron para obtener la prediccion.
+    X = np.c_[X, np.ones((X.shape[0]))]
+    for epoch in np.arange(0, epochs):
+      for (x, target) in zip(X, y):
+        p = self.step(np.dot(x, self.W))
+        # Aqui se realiza una actualizacion del peso (W) solo si la prediccion no coincide con el objetivo de salida. Si nno coincide determinamos el error calculando su signo (positivo o negativo) mediante una operacion de diferenncia.
+        # La actualizacion de la matriz de paso se realiza escalando este valor por nuestra tasa de aprendizaje alfa
+        if p != target:
+          error = p - target
+          self.W += -self.alpha * errror * x
+  # PARTE 3
+  # Nuestro metodo de prediccion requiere un conjunto de datos de entrada X que deben clasificarse
+  # Se realiza una verificacion para verificar si es necesario agregar una columna de sesgo.
+  def predict(self, X, addBias=True):
+    # Para obtener las predicciones de salida se X se debe realizar el mismo procedimiento que en el  entrenamiento.  Simplemente se toma el producto escalar entra las caracteristicas de entrada X y la matriz de peso W
+    X = np.atleast_2d(X)
+    if addBias:
+      X = np.c_[X, np.ones((X.shape[0]))]
+    # Finalmente se pasa el valor a travez de la funcion de paso y se retorna a la funcion de llamada.
+    return self.step(np.dot(X, self.W))
+```
+
+```py
+# PARTE 4
+import numpy as np
+
+# Definimos dos arreglos conn los valores reales de entrada y salida de unna compuerta logica, en este caso es una compuerta OR.
+X = np.array([[0, 0],[0, 1],[1, 0],[1, 1]])
+y = np.array([[0],[1],[1],[1]])
+# Iniciamos el entrenamiento de nuestro perceptron solo usando los datos de entreda. Como dato adicional definimos que sera entrenando durante 20 ciclos con un porcentaje de aprendizaje igual a 0.1.
+p = Perceptron(X.shape[1], alpha=0.1)
+p.fit(X, y, apochs=20)
+# Una vez entrenado el perceptron vamos a usarlo para predecir las salidas de la compuerta, usando los mismos valores de entreda usaremos el metodo predict para obtener los valores predichos por el perceptron.
+for (x, target) in zip(X, y):
+  pred = p.predict(x)
+  print("Resultado: entradas={}, valor real={}, valor predicho={}".format(x, target[0], pred))
+
+# RESULTADOS
+# OR
+# Resultado entradas=[0 0], valor real=0, valor predicho=0
+# Resultado entradas=[0 1], valor real=1, valor predicho=1
+# Resultado entradas=[1 0], valor real=1, valor predicho=1
+# Resultado entradas=[1 1], valor real=1, valor predicho=1
+# AND
+# Resultado entradas=[0 0], valor real=0, valor predicho=0
+# Resultado entradas=[0 1], valor real=0, valor predicho=0
+# Resultado entradas=[1 0], valor real=0, valor predicho=0
+# Resultado entradas=[1 1], valor real=1, valor predicho=1
+# XOR
+# Resultado entradas=[0 0], valor real=0, valor predicho=1
+# Resultado entradas=[0 1], valor real=1, valor predicho=0
+# Resultado entradas=[1 0], valor real=1, valor predicho=0
+# Resultado entradas=[1 1], valor real=0, valor predicho=0
+```
