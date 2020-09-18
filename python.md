@@ -136,6 +136,25 @@ from paquete.subpaquete.modulo1 import CONST_1 as CS1
 
 La importacion de modulos debe realizarse al comienzo del documento, en orden alfabetico de paquetes y modulos.
 
+## Manejo de archivos
+
+El metodo readlines lee todas las lineas de un archivo como una lista, Si se indica el parametro de tamaño leera esa cantidad de bytes del archivo y lo necesario hasta completar la ultima linea.
+
+```py
+# Abrimos un archivo en modo lectura
+file = open('file.txt','r')
+# Leemos todas las lineas y asignamos a una lista
+list = file.readlines()
+# Iniciamos un contador
+numln = 0
+# Recorremos todos los elementos de la lista
+for line in list:
+  # Incrementamos el contador
+  numln += 1
+  # Mostramos la posicion y la linea de la lista
+  print(numln,line)
+```
+
 ## Redes neuronales
 
 ### Perceptron
