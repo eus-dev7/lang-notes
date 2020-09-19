@@ -140,16 +140,18 @@ La importacion de modulos debe realizarse al comienzo del documento, en orden al
 
 #### Operaciones permitidas
 
-|r|Lectura|
-|r+|Lectura/Escritura|
-|w|Sobreescritura. Si no existe se creara|
-|a|Añadir. Se escribe al final del archivo|
-|b|Binario|
-|+|Permite lectura/escritura simultanea|
-|U|Salto de linea universal|
-|rb|Lectura binaria|
-|wb|Sobreescritura binaria|
-|r+b|Lectura/Escritura binaria|
+| Operacion | Descripcion                             |
+| --------- | --------------------------------------- |
+| r         | Lectura                                 |
+| r+        | Lectura/Escritura                       |
+| w         | Sobreescritura. Si no existe se creara  |
+| a         | Añadir. Se escribe al final del archivo |
+| b         | Binario                                 |
+| +         | Permite lectura/escritura simultanea    |
+| U         | Salto de linea universal                |
+| rb        | Lectura binaria                         |
+| wb        | Sobreescritura binaria                  |
+| r+b       | Lectura/Escritura binaria               |
 
 #### Abrir y cerrar archivos
 
@@ -181,6 +183,29 @@ with open('file.txt') as file:
     # Imprimimos la ultima linea leida
     print(line)
 ```
+
+#### Metodo read
+
+Con el metodo **read()** es posible leer un numero de bytes determinados.
+Si no se indica un numéro se leerá todo lo que reste o si se alcanzó el final del archivo se devolverá una cadena vacia
+
+```py
+# Abrimos el archivo en modo lectura
+file = open('file.txt','r')
+
+# Se inicia un ciclo para leer linea por linea
+while True:
+  # Se lee la linea actual
+  line =  file.readline()
+  if not line:
+    # Si no hay lineas se rompe el bucle
+    break
+  print(line)
+
+file.close()
+```
+
+#### Metodo readlines
 
 El metodo readlines lee todas las lineas de un archivo como una lista, Si se indica el parametro de tamaño leera esa cantidad de bytes del archivo y lo necesario hasta completar la ultima linea.
 
