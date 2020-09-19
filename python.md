@@ -154,6 +154,21 @@ ObjFile = open('dir/file.txt',mode='r',encoding='utf-8')
 ObjFile.close()
 ```
 
+#### with-as
+
+**with-as** permite usar los archivos de forma optima cerrandolos y liberando memoria al concluir el proceso de lectura.
+
+No es necesario llamar al metodo **close()** al final.
+
+```py
+# Abrimos el archivo y cerramos conforme se termina de leer
+with open('file.txt') as file:
+  # Recorremos linea por linea
+  for line in file:
+    # Imprimimos la ultima linea leida
+    print(line)
+```
+
 El metodo readlines lee todas las lineas de un archivo como una lista, Si se indica el parametro de tamaño leera esa cantidad de bytes del archivo y lo necesario hasta completar la ultima linea.
 
 ```py
