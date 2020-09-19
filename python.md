@@ -138,6 +138,22 @@ La importacion de modulos debe realizarse al comienzo del documento, en orden al
 
 ## Manejo de archivos
 
+#### Abrir y cerrar archivos
+
+Para poder abrir un archivo se utiliza **Open()** indicando su ubicacion y nombre, segundo opcionalmente por el modo de operacion y la codificacion del archivo.
+
+Si no se indica el modo, por defecto se abrira en modo lectura y se utilizara la codificacion por defecto del sistema. Si existe algun error se producira una excepcion de tipo **IOerror**.
+
+Para cerrar el archivo se utiliza el metodo **close()**
+
+```py
+ObjFile = open('dir/file.txt')
+ObjFile = open('dir/file.txt','r')
+ObjFile = open('dir/file.txt',mode='r',encoding='utf-8')
+
+ObjFile.close()
+```
+
 El metodo readlines lee todas las lineas de un archivo como una lista, Si se indica el parametro de tamaño leera esa cantidad de bytes del archivo y lo necesario hasta completar la ultima linea.
 
 ```py
@@ -153,6 +169,7 @@ for line in list:
   numln += 1
   # Mostramos la posicion y la linea de la lista
   print(numln,line)
+file.close()
 ```
 
 ## Redes neuronales
