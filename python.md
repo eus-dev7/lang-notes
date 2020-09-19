@@ -138,6 +138,19 @@ La importacion de modulos debe realizarse al comienzo del documento, en orden al
 
 ## Manejo de archivos
 
+#### Operaciones permitidas
+
+|r|Lectura|
+|r+|Lectura/Escritura|
+|w|Sobreescritura. Si no existe se creara|
+|a|Añadir. Se escribe al final del archivo|
+|b|Binario|
+|+|Permite lectura/escritura simultanea|
+|U|Salto de linea universal|
+|rb|Lectura binaria|
+|wb|Sobreescritura binaria|
+|r+b|Lectura/Escritura binaria|
+
 #### Abrir y cerrar archivos
 
 Para poder abrir un archivo se utiliza **Open()** indicando su ubicacion y nombre, segundo opcionalmente por el modo de operacion y la codificacion del archivo.
