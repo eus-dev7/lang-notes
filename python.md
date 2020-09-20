@@ -6,19 +6,24 @@ Las estructuras de control condicionales, son las que nos permiten evaluar si un
 
 #### La evaluacion de condiciones solo puede resultar en uno de dos resultados(True o False)
 
-```py
-# Operadores relacionales
-=     Igual que
-!=    Distinto que
-<     Menor que
->     Mayor que
-<=    Menor o igual que
->=    Mayor o igual que
-# Operadores relacionales
-and   y
-or    o
-xor   O excluyente
-```
+**Operadores relacionales**
+
+| Operador | Descripcion       |
+| -------- | ----------------- |
+| =        | Igual que         |
+| !=       | Distinto que      |
+| <        | Menor que         |
+| >        | Mayor que         |
+| <=       | Menor o igual que |
+| >=       | Mayor o igual que |
+
+**Operadores relacionales**
+
+| Operador | Descripcion  |
+| -------- | ------------ |
+| and      | y            |
+| or       | o            |
+| xor      | O excluyente |
 
 ## Iterativas
 
