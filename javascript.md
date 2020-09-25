@@ -287,12 +287,32 @@ Devuelve un número entero, entre 0 y 11, que representa el mes en la fecha indi
 
 ```js
 // Hoy es 23 de septiembre de 2020, Jueves
-const day = new Date().getMonth();
-console.log(day);
+const month = new Date().getMonth();
+console.log(month);
 // Resultado: 08
 ```
 
-## getHours()
+### getHours()
+
+Devuelve un número entero, entre 0 y 23, que representa el correspondiente a la fecha indicada según la hora local.
+
+```js
+// 23:37
+const hour = new Date().getHours();
+console.log(hour);
+// Resultado: 23
+```
+
+### getMinutes()
+
+Devuelve un número entero, entre 0 y 59, que representa los minutos de la fecha indicada según la hora local.
+
+```js
+// 23:37
+const minutes = new Date().getMinutes();
+console.log(minutes);
+// Resultado: 23
+```
 
 ## Metodos rapidos para matrices
 
