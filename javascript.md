@@ -256,6 +256,44 @@ array.slice(-1);
 // Result: [3]
 ```
 
+## Metodos para manejo de hora y fecha
+
+### getDate()
+
+Devuelve un número entero, entre 1 y 31, que representa el día del mes para la fecha indicada según la hora local.
+
+```js
+// Hoy es 23 de septiembre de 2020, Jueves
+const date = new Date().getDate();
+console.log(date);
+// Resultado: 23
+```
+
+### getDay()
+
+Devuelve un número entero, entre 0 y 6, correspondiente al día de la semana para la fecha indicada, 0 para el domingo, 1 para el lunes, 2 para el martes, etc.
+
+```js
+// Hoy es 23 de septiembre de 2020, Jueves
+const day = new Date().getDay();
+console.log(day);
+// Resultado: 4
+```
+
+### getMonth()
+
+Devuelve un número entero, entre 0 y 11, que representa el mes en la fecha indicada según la hora local.
+0 corresponde a enero, 1 a febrero y si.
+
+```js
+// Hoy es 23 de septiembre de 2020, Jueves
+const day = new Date().getMonth();
+console.log(day);
+// Resultado: 08
+```
+
+## getHours()
+
 ## Metodos rapidos para matrices
 
 ### PUSH
